@@ -49,19 +49,26 @@ function validateDate() {
     birthdate.parentElement.setAttribute('data-error-visible', 'false');
     return true;
 }
+function validateQuantity() {
+    if ( isNaN(quantity.value.trim()) === true || quantity.value.trim().length === 0 || quantity.value.trim() < 0) {
+        birthdate.parentElement.setAttribute('data-error-visible', 'true');
+        return false;
+    }
+    birthdate.parentElement.setAttribute('data-error-visible', 'false');
+    return true;
+}                                       
 
 function validateLocalisation() {
     let resultat = "";
     for (let i = 0; i < location.length; i++) {
         if (location[i].checked) {
             resultat += location[i].value  + ", ";
-        }
-    }
 
-    if (birthdate.value.trim() === '' ||  birthdate.value.match(regDate)) {
-        birthdate.parentElement.setAttribute('data-error-visible', 'true');
-        return false;
+            location.parentElement.setAttribute('data-error-visible', 'true');
+            return true 
+        } 
+        location.parentElement.setAttribute('data-error-visible', 'false');
+        return false
     }
-    birthdate.parentElement.setAttribute('data-error-visible', 'false');
-    return true;
 }
+
