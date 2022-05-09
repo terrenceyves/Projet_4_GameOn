@@ -1,4 +1,4 @@
-// DOM ELEMENTS
+/*** DOM ELEMENTS ***/
 
 const firstName = document.getElementById('first');
 const lastName = document.getElementById('last');
@@ -14,7 +14,7 @@ const form = document.getElementById('form');
 
 // REGEXP VARIABLES 
 
-const regName = new RegExp("/^[\p{L}'][ \p{L}'-]*[\p{L}]$/u"); 
+const regName = new RegExp("/^[\p{L}'][ \p{L}'-]*[\p{L}]$/u", "g"); 
 const regEmail = new RegExp("^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$"); 
 const regDate = new RegExp("/(?:(?:31(\/|-|\.)(?:0?[13578]|1[02]))\1|(?:(?:29|30)(\/|-|\.)(?:0?[13-9]|1[0-2])\2))(?:(?:1[6-9]|[2-9]\d)?\d{2})$|^(?:29(\/|-|\.)0?2\3(?:(?:(?:1[6-9]|[2-9]\d)?(?:0[48]|[2468][048]|[13579][26])|(?:(?:16|[2468][048]|[3579][26])00))))$|^(?:0?[1-9]|1\d|2[0-8])(\/|-|\.)(?:(?:0?[1-9])|(?:1[0-2]))\4(?:(?:1[6-9]|[2-9]\d)?\d{2})/", "gi"); 
 
@@ -84,12 +84,15 @@ function validateLocalisation() {
 // Validation checkbox
 function validationcheckbox(){
     if(checkboxPolicy.checked && checkboxPub.checked){
-       che.parentElement.setAttribute('data-error', 'merci de cocher la case');
+        checkboxPolicy.parentElement.setAttribute('data-error', 'merci de cocher la case');
+        checkboxPub.parentElement.setAttribute('data-error', 'merci de cocher la case');
         return true
     }
     else{
-        location.parentElement.setAttribute('data-error', 'false');
+        checkboxPolicy.parentElement.setAttribute('data-error', 'false');
+        checkboxPub.parentElement.setAttribute('data-error', 'false');
         return false 
     }
 }
+
 

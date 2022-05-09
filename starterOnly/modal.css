@@ -348,6 +348,12 @@ input[data-error]::after {
   background-color: #fff;
 }
 
+#view-validate{
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+}
+
 /* Style the arrow inside the select element: */
 .select-selected:after {
   position: absolute;
@@ -362,6 +368,8 @@ input[data-error]::after {
   transform: rotate(-48deg);
   border-radius: 5px 0 5px 0;
 }
+
+
 
 /* Point the arrow upwards when the select box is open (active): */
 .select-selected.select-arrow-active:after {
