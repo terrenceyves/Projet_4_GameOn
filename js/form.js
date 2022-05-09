@@ -6,6 +6,7 @@ const birthdate = document.getElementById('birthdate');
 const parentCheckBox = document.getElementById('parentCheckBox');
 const location = document.querySelectorAll('#parentCheckBox .checkbox-input');
 const checkboxPolicy = document.getElementById('checkbox1');
+const checkboxPub = document.getElementById('checkbox2');
 const input = document.getElementsByClassName('text-control');
 const form = document.getElementById('form');
 
@@ -59,16 +60,26 @@ function validateQuantity() {
 }                                       
 
 function validateLocalisation() {
-    let resultat = "";
-    for (let i = 0; i < location.length; i++) {
-        if (location[i].checked) {
-            resultat += location[i].value  + ", ";
+   
+    localisation.options[localisation.selectedIndex].value;
+    textselectionne = localisation.options[localisation.selectedIndex].text;
 
-            location.parentElement.setAttribute('data-error-visible', 'true');
+        if (![liste.selectedIndex].value === 0) {
+            location.parentElement.setAttribute('data-error', 'merci de séléctionner une ville');
             return true 
         } 
         location.parentElement.setAttribute('data-error-visible', 'false');
         return false
+}
+
+function checkboxValidation(){
+    if(checkboxPolicy.checked && checkboxPub.checked){
+       che.parentElement.setAttribute('data-error', 'merci de cocher la case');
+        return true
+    }
+    else{
+        location.parentElement.setAttribute('data-error', 'false');
+        return false 
     }
 }
 

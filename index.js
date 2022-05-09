@@ -1,4 +1,4 @@
-import '/js/form.js';
-import '/js/modal.js';
-import '/js/submitForm.js';
+import '/js/form';
+import '/js/modal';
+import '/js/submitForm';
  
