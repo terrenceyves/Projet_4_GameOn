@@ -19,6 +19,7 @@ const regDate = new RegExp("/(?:(?:31(\/|-|\.)(?:0?[13578]|1[02]))\1|(?:(?:29|30
 // Validation FirstName
 function validateFirstName() {
     if (firstName.value.trim().length < 2 || firstName.value.trim() === '', firstName.value.match(regName)) {
+        firstName.parentElement.setAttribute('data-error', 'Error');
         firstName.parentElement.setAttribute('data-error-visible', 'true');
         return false;
     }
@@ -26,71 +27,5 @@ function validateFirstName() {
     return true;
 }
 
-// Validation LastName
-function validateLasttName() {
-    if (regName.value.trim().length < 2 || lastName.value.trim() === '', lastName.value.match(regName)) {
-        lastName.parentElement.setAttribute('data-error-visible', 'true');
-        return false;
-    }
-    lastName.parentElement.setAttribute('data-error-visible', 'false');
-    return true;
-}
-// Validation Email
-function validateEmail() {
-    if (email.value.trim() === '' || email.value.match(regEmail) ) {
-        email.parentElement.setAttribute('data-error-visible', 'true');
-        return false;
-    }
-    email.parentElement.setAttribute('data-error-visible', 'false');
-    return true;
-}
-
-// Validation Date
-function validateDate() {
-    if (birthdate.value.trim() === '' ||  birthdate.value.match(regDate)) {
-        birthdate.parentElement.setAttribute('data-error-visible', 'true');
-        return false;
-    }
-    birthdate.parentElement.setAttribute('data-error-visible', 'false');
-    return true;
-}
-
-// Validation Quantity
-function validateQuantity() {
-    if ( isNaN(quantity.value.trim()) === true || quantity.value.trim().length === 0 || quantity.value.trim() < 0) {
-        birthdate.parentElement.setAttribute('data-error-visible', 'true');
-        return false;
-    }
-    birthdate.parentElement.setAttribute('data-error-visible', 'false');
-    return true;
-} 
-
-// Validation Quantity
-function validateLocalisation() {
-   
-    localisation.options[localisation.selectedIndex].value;
-    textselectionne = localisation.options[localisation.selectedIndex].text;
-
-        if (![liste.selectedIndex].value === 0) {
-            location.parentElement.setAttribute('data-error', 'merci de séléctionner une ville');
-            return true 
-        } 
-        location.parentElement.setAttribute('data-error-visible', 'false');
-        return false
-}
-
-// Validation checkbox
-function validationcheckbox(){
-    if(checkboxPolicy.checked && checkboxPub.checked){
-        checkboxPolicy.parentElement.setAttribute('data-error', 'merci de cocher la case');
-        checkboxPub.parentElement.setAttribute('data-error', 'merci de cocher la case');
-        return true
-    }
-    else{
-        checkboxPolicy.parentElement.setAttribute('data-error', 'false');
-        checkboxPub.parentElement.setAttribute('data-error', 'false');
-        return false 
-    }
-}
 
 
