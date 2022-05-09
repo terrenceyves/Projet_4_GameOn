@@ -1,5 +1,3 @@
-/*** DOM ELEMENTS ***/
-
 const firstName = document.getElementById('first');
 const lastName = document.getElementById('last');
 const email = document.getElementById('email');
